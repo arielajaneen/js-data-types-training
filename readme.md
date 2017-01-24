@@ -114,12 +114,12 @@ var friends = [
   ]
 ]
 ```
-<details>
-<summary>answer</summary>
-```js
-friends[0].concat(friends[1]);
-```
-</details>
+  <details>
+  <summary>answer</summary>
+  ```js
+  friends[0].concat(friends[1]);
+  ```
+  </details>
 
 ### Strings & Arrays
 1. We have an array of the cardinal directions. In one line, get the first letter of the word "north" from this array.
@@ -131,26 +131,26 @@ var directions = [
 "west"
 ];
 ```
-<details>
-<summary>answer</summary>
-```js
-directions[0][0];
-```
-</details>
+  <details>
+  <summary>answer</summary>
+  ```js
+  directions[0][0];
+  ```
+  </details>
 
 2. We need to use in-between directions, like "east northeast", when navigating. Build the string "east northeast" using this array.
 
-<details>
-<summary>answer</summary>
-```js
-directions[2] + " " + directions[0] + directions[2];
-```
-</details>
+  <details>
+  <summary>answer</summary>
+  ```js
+  directions[2] + " " + directions[0] + directions[2];
+  ```
+  </details>
 
 3. We can shorten east northeast into shorthand using just the first letters, ene. Build that string using this array.
-<details>
-<summary>answer</summary>
-```js
-directions[2][0] + directions[0][0] + directions[2][0];
-```
-</details>
+  <details>
+  <summary>answer</summary>
+  ```js
+  directions[2][0] + directions[0][0] + directions[2][0];
+  ```
+  </details>
