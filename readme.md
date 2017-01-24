@@ -95,207 +95,62 @@
     ```
   </details>
 
-
-### Objects
-
-1. Write out an object literal to represent the data below.
-
-  ```
-  John, Doe, 36, 1234 Park St.
-  ```
-
-  <details>
-    <summary>sample answer</summary>
-    ```js
-    var jd = {
-      firstName: "John",
-      lastName: "Doe",
-      age: 36,
-      address: {
-        street: "Park St.",
-        number: 1234
-      }
-    }
-    ```
-  </details>
-
-2. How would you represent the following data using a combination of object literals and arrays? (You can describe a strategy without typing or writing out the whole thing.)
-
-  ```
-  Jane, Doe, 32, 1239 Spark St.
-  Mary, Doe, 31, 1231 Spark St.
-  Greg, Doe, 34, 1214 Park St.
-  Harriet, Doe, 32, 1324 Park St.
-  ```
-
-  <details>
-    <summary>answer</summary>
-    Structure each object like the one I made for the last question. Then put all of the objects inside one array.
-  </details>
-
-
-### More Complex Structures
-
-Copy the following `clubs` variable into your console.
+5. This array contains 2 arrays, of different groups of friends. But everyone became friends! Merge these two arrays into a single array using array methods.
 
 ```js
-var clubs =  [
-	{
-    	name: 'Yearbook',
-        students: [
-	        { first: 'Joe', last: 'Lakin' },
-	        { first: 'Evalyn', last: 'Bradtke' },
-			{ first: 'Samuel', last: 'Black' }
-	    ],
-        teacher: 'James Friar'
-    },
-    {
-    	name: 'Jazz Band',
-        students: [
-			{ first: 'Douglas', last: 'Wisoky' },
-        	{ first: 'Cora', last: 'Thompson' },
-			{ first: 'Samuel', last: 'Ziemann' },
-			{ first: 'Alana', last: 'Cortez'}
-	    ],
-        teacher: 'Luther Richards'
-    },
-    {
-    	name: 'Swim Team',
-        students: [
-        	{ first: 'Cora', last: 'Thompson' },
-			{ first: 'Samuel', last: 'Black' },
-			{ first: 'Alana', last: 'Cortez'},
-			{ first: 'Joe', last: 'Lakin' }
-	    ],
-        teacher: 'Carol Darby'
-    }
+var friends = [
+  [
+    "George",
+    "John",
+    "Ringo",
+    "Paul"
+  ], [
+    "Brian",
+    "Mick",
+    "Keith",
+    "Ian",
+    "Bill",
+    "Charlie"
+  ]
+]
+```
+<details>
+<summary>answer</summary>
+```js
+friends[0].concat(friends[1]);
+```
+</details>
+
+### Strings & Arrays
+1. We have an array of the cardinal directions. In one line, get the first letter of the word "north" from this array.
+```js
+var directions = [
+"north",
+"south",
+"east",
+"west"
 ];
 ```
+<details>
+<summary>answer</summary>
+```js
+directions[0][0];
+```
+</details>
 
-**Start from the `clubs` variable.**
+2. We need to use in-between directions, like "east northeast", when navigating. Build the string "east northeast" using this array.
 
-1. Find and `console.log` the following:  
-	* the array that contains all the student club data
-    <details>
-      <summary>answer</summary>
-      `console.log(clubs);`
-    </details>
+<details>
+<summary>answer</summary>
+```js
+directions[2] + " " + directions[0] + directions[2];
+```
+</details>
 
-	* the number of clubs  
-    <details>
-      <summary>answer</summary>
-      `console.log(clubs.length);`
-    </details>
-
-
-	* the object that contains all of the information for the jazz band
-    <details>
-      <summary>answer</summary>
-      `console.log(clubs[1]);`
-    </details>
-
-
-	* the teacher of the first club  
-    <details>
-      <summary>answer</summary>
-      ```js
-      console.log(clubs[0]['teacher']); // bracket notation, or
-      console.log(clubs[0].teacher);    // dot notation
-      ```
-    </details>
-
-
-	* the array of students in the jazz band
-    <details>
-      <summary>answer</summary>
-      ```js
-      console.log(clubs[1]['students']);
-      console.log(clubs[1].students);
-      ```
-    </details>
-
-
-	* the last name of the second student on the swim team  
-    <details>
-      <summary>answer</summary>
-      ```js
-      console.log(clubs[2]['students'][1]['last']);
-      console.log(clubs[2].students[1].last);
-      ```
-    </details>
-
-
-
-1. Create an object literal representing a student with your name, and assign it to a variable.
-  <details>
-    <summary>answer</summary>
-    `var me = { first: 'Bob', last: 'Loblaw' };`
-  </details>
-
-
-
-1. Add yourself to one of the clubs as a student member.
-  <details>
-    <summary>answer</summary>
-    ```js
-    // joining the swim team
-    clubs[2]['students'].push(me); // or
-    clubs[2].students.push(me);  
-    ```
-  </details>
-
-
-
-1. Create an object literal representing a new club, and assign it to a variable. Make sure it has values for name, students, and teacher.
-  <details>
-    <summary>answer</summary>
-    ```js
-    var lawClub = {
-    	name: 'Legal Eagles',
-    	students: [],
-    	teacher: 'Abby Fuentes'
-    };
-    ```
-  </details>
-
-
-
-	* Use an array method to add your new club to the array of clubs.  
-    <details>
-      <summary>answer</summary>
-      ```js
-      clubs.push(lawClub);
-      ```
-    </details>
-
-
-	* Add yourself as a student in the new club.
-    <details>
-      <summary>answer</summary>
-      ```js
-      clubs[3]['students'].push(me); // or
-      clubs[3].students.push(me);
-      ```
-    </details>
-
-
-
-1. Update Samuel Black's first name to Sam everywhere it occurs. Hint: there is not a great shortcut to do this.
-
-  <details>
-    <summary>answer</summary>
-    ```js
-    clubs[0]['students'][2]['first'] = 'Sam';
-    clubs[2]['students'][1]['first'] = 'Sam';
-    clubs[0].students[2].first = 'Sam';
-    clubs[2].students[1].first = 'Sam';
-    ```
-  </details>
-
-
-
-1. Oops, the school is losing extracurricular funding.  Use an array method to remove one of the clubs from the array.
-  <details>
-    <summary>answer</summary>
-    `clubs.shift(); // goodbye yearbook!`
-  </details>
+3. We can shorten east northeast into shorthand using just the first letters, ene. Build that string using this array.
+<details>
+<summary>answer</summary>
+```js
+directions[2][0] + directions[0][0] + directions[2][0];
+```
+</details>
